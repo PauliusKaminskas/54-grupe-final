@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { BadgeDanger } from '../badge/BadgeDanger';
 import { BadgeDraft } from '../badge/BadgeDraft';
 import { BadgeSuccess } from '../badge/BadgeSuccess';
@@ -25,12 +26,12 @@ export function CategoriesTableRow({ data }) {
             </td>
             <td>
                 <div style={{ display: 'flex', gap: '0.3rem' }}>
-                    <a
+                    <Link
+                        to={`/admin/categories/${data.url_slug}/edit`}
                         className="btn btn-primary"
-                        href="/admin/categories/biography/edit"
                     >
                         Edit
-                    </a>
+                    </Link>
                     <button
                         data-id="4"
                         className="btn btn-danger"

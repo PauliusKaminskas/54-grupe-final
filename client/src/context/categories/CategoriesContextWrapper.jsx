@@ -87,6 +87,11 @@ export function CategoriesContextWrapper(props) {
         fetchAdminCategories();
     }
 
+    function adminDeleteCategory(id) {
+        setPublicCategories((list) => list.filter((c) => c.id !== id));
+        setAdminCategories((list) => list.filter((c) => c.id !== id));
+    }
+
     const value = {
         publicCategories,
         featuredCategories,
@@ -95,6 +100,7 @@ export function CategoriesContextWrapper(props) {
         setFeaturedCategoriesList,
         setAdminCategoriesList,
         adminRefreshCategory,
+        adminDeleteCategory,
     };
 
     return (
